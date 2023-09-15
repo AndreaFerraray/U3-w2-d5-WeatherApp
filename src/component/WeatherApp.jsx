@@ -25,7 +25,7 @@ function WeatherApp() {
             date: forecastDate,
             temperature: forecast.main.temp,
             description: forecast.weather[0].description,
-            iconId: forecast.weather[0].id,
+            iconId: forecast.weather[0].icon,
           });
           currentDate = forecastDate;
         }
@@ -55,12 +55,12 @@ function WeatherApp() {
       </div>
       <div className="row">
         {weatherData.map((forecast) => (
-          <div key={forecast.date} className="col-md-2">
-            <div className="card">
+          <div key={forecast.date} className="col-md-12 my-2 ">
+            <div className="card ">
               <div className="card-body">
                 <h5 className="card-title">{forecast.date}</h5>
                 <p className="card-text">Temperatura: {forecast.temperature}°C</p>
-                <p className="card-text">{forecast.description}</p>
+                <p className="card-text fs-4">{forecast.description}</p>
                 <i className={`wi wi-owm-${forecast.iconId}`} />
               </div>
             </div>
