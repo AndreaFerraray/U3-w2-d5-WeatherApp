@@ -10,7 +10,7 @@ function WeatherApp() {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&cnt=5`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&cnt=7`
       );
       setWeatherData(response.data);
     } catch (error) {
