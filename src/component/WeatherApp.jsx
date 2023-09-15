@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "weather-icons/css/weather-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 function WeatherApp() {
   const [city, setCity] = useState("");
@@ -39,8 +41,11 @@ function WeatherApp() {
   };
 
   return (
-    <div className="container">
-      <h1 className="mt-4">Meteo App</h1>
+    <div className="container ">
+      <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Logo_ilMeteo_anno_2012.png"></img>
+      </div>
+
       <div className="mb-4">
         <input
           type="text"
@@ -49,19 +54,19 @@ function WeatherApp() {
           onChange={(e) => setCity(e.target.value)}
           className="form-control"
         />
-        <button onClick={handleSearch} className="btn btn-primary mt-2">
+        <button onClick={handleSearch} className="btn btn-primary mt-2" variant="secondary">
           Cerca
         </button>
       </div>
-      <div className="row">
+      <div className="row App ">
         {weatherData.map((forecast) => (
           <div key={forecast.date} className="col-md-12 my-2 ">
-            <div className="card ">
+            <div className="card Card-gradient ">
               <div className="card-body">
                 <h5 className="card-title">{forecast.date}</h5>
                 <p className="card-text">Temperatura: {forecast.temperature}°C</p>
                 <p className="card-text fs-4">{forecast.description}</p>
-                <i className={`wi wi-owm-${forecast.iconId}`} />
+                <i className={`wi wi-${forecast.iconId}`} />
               </div>
             </div>
           </div>

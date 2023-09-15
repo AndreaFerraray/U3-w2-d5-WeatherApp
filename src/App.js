@@ -4,8 +4,8 @@ import WeatherApp from "./component/WeatherApp";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App ">
+      <header className="App-header bg-gradient">
         <WeatherApp />
       </header>
     </div>
